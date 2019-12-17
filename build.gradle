@@ -1,0 +1,23 @@
+plugins {
+    id 'org.springframework.boot' version '1.5.15.RELEASE'
+    id 'io.spring.dependency-management' version '1.0.8.RELEASE'
+    id 'java'
+}
+
+group = 'com.example'
+sourceCompatibility = '1.8'
+archivesBaseName = 'pulsar_demo'
+
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile('org.springframework.boot:spring-boot-starter-web')
+    compile('org.apache.pulsar:pulsar-client:2.4.1')
+    compileOnly 'org.projectlombok:lombok'
+    testCompile('org.springframework.boot:spring-boot-starter-test') {
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+    }
+}
